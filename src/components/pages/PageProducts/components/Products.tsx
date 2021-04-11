@@ -58,6 +58,9 @@ export default function Products() {
               <Typography>
                 {formatAsPrice(product.price)}
               </Typography>
+              <Typography>
+                Available: {product.count}
+              </Typography>
             </CardContent>
             <CardActions>
               <AddProductToCart product={product}/>
