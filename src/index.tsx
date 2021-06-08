@@ -25,7 +25,7 @@ axios.interceptors.response.use(
   }
 );
 
-localStorage.setItem('authorization_token', 'dmVsZHltYW5vdjpURVNUX1BBU1NXT1J');
+localStorage.setItem('authorization_token', 'dmVsZHltYW5vdjpURVNUX1BBU1NXT1JE');
 
 ReactDOM.render(
   <React.StrictMode>
