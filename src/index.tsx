@@ -25,7 +25,11 @@ axios.interceptors.response.use(
   }
 );
 
-localStorage.setItem('authorization_token', 'dmVsZHltYW5vdjpURVNUX1BBU1NXT1JE');
+const implicitGrant = getHashParams();
+console.log('implicitGrant ', implicitGrant);
+
+localStorage.setItem('access_token', implicitGrant.id_token);
+// localStorage.setItem('authorization_token', 'dmVsZHltYW5vdjpURVNUX1BBU1NXT1JE');
 
 ReactDOM.render(
   <React.StrictMode>
@@ -41,3 +45,15 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+
+function getHashParams() {
+  const hash = window.location.hash.substr(1);
+
+  return hash.split('&')
+    .reduce((res: {[key: string]: string}, item)=> {
+      const parts = item.split('=');
+      res[parts[0]] = parts[1];
+      return res;
+    }, {});
+};

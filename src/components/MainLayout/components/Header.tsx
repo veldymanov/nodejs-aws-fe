@@ -77,6 +77,12 @@ export default function Header() {
             >
               <MenuItem component={Link} to="/admin/orders" onClick={handleClose}>Manage orders</MenuItem>
               <MenuItem component={Link} to="/admin/products" onClick={handleClose}>Manage products</MenuItem>
+              <MenuItem>
+              <a
+                // href="https://test-demo-pool.auth.eu-west-1.amazoncognito.com/login?client_id=35st811o7ph9kfpknkk0nfbrbu&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=http://localhost:3000/"
+                href="https://test-demo-pool.auth.eu-west-1.amazoncognito.com/login?client_id=35st811o7ph9kfpknkk0nfbrbu&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https://d2lvjuwl8mt9u1.cloudfront.net/"
+              > Login </a>
+              </MenuItem>
             </Menu>
           </div>
         )}
