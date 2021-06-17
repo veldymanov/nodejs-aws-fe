@@ -41,7 +41,7 @@ export default function CSVFileImport({url, title}: CSVFileImportProps) {
         },
         headers: {
           Authorization: `Bearer ${localStorage.getItem('access_token')}`,
-          // authorization_token: `Basic ${localStorage.getItem('authorization_token')}`
+          authorization_token: `Basic ${localStorage.getItem('authorization_token')}`
         }
       });
 

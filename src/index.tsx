@@ -29,7 +29,7 @@ const implicitGrant = getHashParams();
 console.log('implicitGrant ', implicitGrant);
 
 localStorage.setItem('access_token', implicitGrant.id_token);
-// localStorage.setItem('authorization_token', 'dmVsZHltYW5vdjpURVNUX1BBU1NXT1JE');
+localStorage.setItem('authorization_token', 'dmVsZHltYW5vdjpURVNUX1BBU1NXT1JE');
 
 ReactDOM.render(
   <React.StrictMode>
