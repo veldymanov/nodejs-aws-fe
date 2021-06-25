@@ -33,6 +33,11 @@ export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const auth = true;
+  const redirectUrl = window.location.hostname === 'localhost'
+    ? `http://localhost:3000/`
+    : `https://d2lvjuwl8mt9u1.cloudfront.net/`;
+  const cognitoAuthUrl = `https://test-demo-pool.auth.eu-west-1.amazoncognito.com/login?client_id=35st811o7ph9kfpknkk0nfbrbu&response_type=token&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=${redirectUrl}`;
+  console.log('cognitoAuthUrl ', cognitoAuthUrl)
 
   const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -77,6 +82,7 @@ export default function Header() {
             >
               <MenuItem component={Link} to="/admin/orders" onClick={handleClose}>Manage orders</MenuItem>
               <MenuItem component={Link} to="/admin/products" onClick={handleClose}>Manage products</MenuItem>
+              <MenuItem> <a href={cognitoAuthUrl}> Login </a> </MenuItem>
             </Menu>
           </div>
         )}
